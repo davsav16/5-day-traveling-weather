@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+}
+.card {
+    width: 8rem;
+    background-color: black;
+    margin-left: 0px;
+    margin-right: 5px;
+}
+
+.five-day {
+    margin: auto;
+}
+
+.card-title {
+    color: white;
+}
+
+.list-unstyled {
+    margin-left: 3px;
+    color: white;
+}
