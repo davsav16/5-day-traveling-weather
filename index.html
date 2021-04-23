@@ -17,32 +17,34 @@
         </header>
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
-                    <form>
-                        <h3>Search for A City:</h3>
-                        <input name="city" id="city" type="text" autofocus="true" class="form-input">
-                        <div class="d-grid gap-2">
-                            <button onclick="" class="btn btn-primary" type="submit">Search</button>
+                <div class="col-md-3 search">
+                    <form class="card">
+                        <div class="search">
+                            <h3>Search for A City:</h3>
+                            <input type="text" class="search-box" placeholder="Search for a city...">
+                            <button class="btn btn-primary" type="submit">Search</button>
                         </div>
                     </form>
                     <div>Search History</div>
                 </div>
                 <div class="col-md-9">
                     <div class="row">
-                        <main class="text-start">
-                            <h3>Current City<span>(Current Date)</span></h3>
-                            <p>Temp</p>
-                            <p>Wind</p>
-                            <p>Humidity</p>
-                            <p>UV Index</p>
+                        <main class="text-start cc">
+                            <h3><span class="city"></span> (<span id="currentDay"></span>) </h3> 
+                            <div id="icon"></div>
+                            <di class="current">
+                                <p>Temp: <span class="temp"></span></p>
+                                <p>Wind: <span class="wind"></span></p>
+                                <p>Humidity: <span class="humidity"></span> </p>
+                                <p class="uv">UV Index</p>
+                            </di>
                         </main>
-
                     </div>
                     <div class="row">
                         <section>
                             <h3 class="text-start">5-Day Forecast</h3>
                             <div class="row five-day">
-                                <div class="card">
+                                <div class="card day">
                                     <div class="card-body">
                                         <h5 class="card-title">Date</h5>
                                     </div>
@@ -53,7 +55,7 @@
                                     </ul>
                                 </div>
                                 
-                                <div class="card">
+                                <div class="card day">
                                     <div class="card-body">
                                         <h5 class="card-title">Date</h5>
                                     </div>
@@ -64,7 +66,7 @@
                                     </ul>
                                 </div>
                                 
-                                <div class="card">
+                                <div class="card day">
                                     <div class="card-body">
                                         <h5 class="card-title">Date</h5>
                                     </div>
@@ -75,7 +77,7 @@
                                     </ul>
                                 </div>
                                 
-                                <div class="card">
+                                <div class="card day">
                                     <div class="card-body">
                                         <h5 class="card-title">Date</h5>
                                     </div>
@@ -86,7 +88,7 @@
                                     </ul>
                                 </div>
                                 
-                                <div class="card">
+                                <div class="card day">
                                     <div class="card-body">
                                         <h5 class="card-title">Date</h5>
                                     </div>
@@ -102,5 +104,8 @@
                 </div>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="./script.js"></script>
     </body>
 </html>

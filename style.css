@@ -1,7 +1,13 @@
 body {
     margin: 0;
 }
-.card {
+
+/*header styling*/
+.text-center{
+    background-image: linear-gradient(to right, rgb(53, 78, 218), rgb(15, 15, 105));
+    color: white;
+}
+.day {
     width: 8rem;
     background-color: black;
     margin-left: 0px;
@@ -19,4 +25,21 @@ body {
 .list-unstyled {
     margin-left: 3px;
     color: white;
+}
+.cc {
+    border: 10px black;
+    width: 100%;
+}
+
+.current {
+   
+}
+
+/* search section*/
+.search {
+    width: 100%;
+}
+.btn {
+    margin-top: 15px;
+    width: 100%;
 }
