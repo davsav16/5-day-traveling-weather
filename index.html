@@ -15,9 +15,9 @@
         <header>
             <h1 class="text-center">Weather Dashboard</h1> 
         </header>
-        <div class="container">
+        <div class="container display">
             <div class="row">
-                <div class="col-md-3 search">
+                <div class="col-lg-4">
                     <form class="card">
                         <div class="search">
                             <h3>Search for A City:</h3>
@@ -27,9 +27,9 @@
                     </form>
                     <div>Search History</div>
                 </div>
-                <div class="col-md-9">
-                    <div class="row">
-                        <main class="text-start cc">
+                <div class="col-lg-8">
+                    <div class="row display">
+                        <main class="text-start">
                             <h3><span class="city"></span> (<span id="currentDay"></span>)<span> <img id="icon"></span> </h3> 
                             <di class="current">
                                 <p>Temp: <span class="temp"></span></p>
@@ -39,9 +39,9 @@
                             </di>
                         </main>
                     </div>
-                    <div class="row">
+                    <div class="row display">
                         <section>
-                            <h3 class="text-start">5-Day Forecast</h3>
+                            <h3 class="text-start">5-Day Forecast:</h3>
                             <div class="row five-day">
                                 <div class="card day">
                                     <div class="card-body">
@@ -49,15 +49,15 @@
                                     </div>
                                     <img id="day1img">
                                     <ul class="list-unstyled">
-                                        <li>Temp:<span id="day1temp"></span></li>
-                                        <li>Wind:<span id="day1wind"></span></li>
-                                        <li>Humidity:<span id="day1humid"></span></li>
+                                        <li>Temp: <span id="day1temp"></span></li>
+                                        <li>Wind: <span id="day1wind"></span></li>
+                                        <li>Humidity: <span id="day1humid"></span></li>
                                     </ul>
                                 </div>
                                 
                                 <div class="card day">
                                     <div class="card-body">
-                                        <h5 class="card-title">Date</h5>
+                                        <h5 class="card-title" id="day2date">Date</h5>
                                     </div>
                                     <img id="day2img">
                                     <ul class="list-unstyled">
@@ -69,7 +69,7 @@
                                 
                                 <div class="card day">
                                     <div class="card-body">
-                                        <h5 class="card-title">Date</h5>
+                                        <h5 class="card-title" id="day3date">Date</h5>
                                     </div>
                                     <img id="day3img">
                                     <ul class="list-unstyled">
@@ -81,7 +81,7 @@
                                 
                                 <div class="card day">
                                     <div class="card-body">
-                                        <h5 class="card-title">Date</h5>
+                                        <h5 class="card-title" id="day4date">Date</h5>
                                     </div>
                                     <img id="day4img">
                                     <ul class="list-unstyled">
@@ -93,7 +93,7 @@
                                 
                                 <div class="card day">
                                     <div class="card-body">
-                                        <h5 class="card-title">Date</h5>
+                                        <h5 class="card-title"id="day5date">Date</h5>
                                     </div>
                                     <img id="day5img">
                                     <ul class="list-unstyled">

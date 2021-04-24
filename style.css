@@ -1,4 +1,4 @@
-body {
+* body {
     margin: 0;
 }
 
@@ -7,11 +7,22 @@ body {
     background-image: linear-gradient(to right, rgb(53, 78, 218), rgb(15, 15, 105));
     color: white;
 }
+
+.search h3 {
+    font-weight: bold;
+}
+
+.display {
+    margin: 0px;
+    margin-right: 0px;
+    
+}
 .day {
-    width: 8rem;
-    background-color: black;
+    width: 9rem;
+    background-color: rgba(25, 6, 134, 0.877);
     margin-left: 0px;
-    margin-right: 5px;
+    margin-right: 10px;
+    margin-top: 5px;
 }
 
 .five-day {
@@ -31,12 +42,8 @@ body {
     width: 100%;
 }
 
-.current {
-   
-}
-
 /* search section*/
-.search {
+.search-box {
     width: 100%;
 }
 .btn {

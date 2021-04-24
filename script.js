@@ -1,6 +1,9 @@
 function currentDate() {
-    document.querySelector("#currentDay").innerHTML = moment().format("l"); }
-
+    document.querySelector("#currentDay").innerHTML = moment().format("l"); 
+    for(var i = 1; i<6; i++){
+    document.querySelector(`#day${i}date`).innerHTML = moment().add(i, 'd').format("l");
+    }
+    }
 currentDate();
 
 let weather = {
@@ -16,23 +19,23 @@ let weather = {
     },
     displayWeather: function(data) {
         const { name } = data;
-        const { icon, description } = data.weather[0];
+        const { icon } = data.weather[0];
         const { temp, humidity } = data.main;
         const { speed } = data.wind;
 
         document.querySelector(".city").innerHTML = name;
         document.querySelector("#icon").setAttribute('src', `http://openweathermap.org/img/wn/${icon}.png`);
-        document.querySelector(".temp").innerHTML = temp + "°F";
-        document.querySelector(".wind").innerHTML = speed + "mph";
+        document.querySelector(".temp").innerHTML = temp + " °F";
+        document.querySelector(".wind").innerHTML = speed + " mph";
         document.querySelector(".humidity").innerHTML = humidity + "%";
 
 
     },
     display5Day: function(data) {
-        for(var i = 1; i<5; i++) {
-            document.querySelector(`#day${i}temp`).innerHTML = data.list[i].main.temp;
-            document.querySelector(`#day${i}wind`).innerHTML = data.list[i].wind.speed;
-            document.querySelector(`#day${i}humid`).innerHTML = data.list[i].main.humidity;
+        for(var i = 1; i<6; i++) {
+            document.querySelector(`#day${i}temp`).innerHTML = data.list[i].main.temp + " °F";
+            document.querySelector(`#day${i}wind`).innerHTML = data.list[i].wind.speed + " mph";
+            document.querySelector(`#day${i}humid`).innerHTML = data.list[i].main.humidity + "%";
             document.querySelector(`#day${i}img`).setAttribute('src', `http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}.png`)
         }
     },
@@ -40,13 +43,20 @@ let weather = {
         this.fetchWeather(document.querySelector(".search-box").value);
     },
     fiveDay: function(city) {
-        fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${this.apiKey}`)
+        fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${this.apiKey}`)
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
             this.display5Day(data);
         });
-    }
+    },
+    //uvIndex: function(city) {
+      //  fetch(`http://api.openweathermap.org/data/2.5/uvi?q=${city}&appid=${this.apiKey}`)
+        //.then((response) => response.json())
+        //.then((data) => {
+          //  console.log(data);
+       // })
+    //}
 };
 
 document.querySelector(".card").addEventListener("submit", function(event) {
