@@ -1,3 +1,44 @@
+var cityArr = [];
+
+var displayCity = function(city) {
+    var history = document.querySelector("#list-cityOutput");
+    var cityLi = document.createElement('li')
+    var cityBtn = document.createElement("button");
+    var text = document.createTextNode(city)
+    text.classList.add("")
+    cityBtn.classList.add("searchBtn");
+    cityBtn.appendChild(text);
+    history.appendChild(cityLi);
+    cityLi.appendChild(cityBtn);
+}
+
+//var t = document.createTextNode("test content");
+//b.appendChild(t);
+
+var loadCity = function(codeName) {
+    if (!JSON.parse(localStorage.getItem("city"))) {
+        return;
+    } else {
+        if (codeName === 'clicked') {
+            var children = document.querySelector('#list-cityOutput').children
+            children.forEach(child => {
+                document.querySelector('#list-cityOutput').removeChild(child);
+            });            
+        }
+        cityArr = JSON.parse(localStorage.getItem("city"));
+        cityArr.forEach(city => {
+            displayCity(city);
+        }); 
+    };
+
+}
+loadCity('loaded');
+
+var saveCity = function(city) {
+    cityArr.push(city);
+    localStorage.setItem("city", JSON.stringify(cityArr));
+  };
+
 function currentDate() {
     document.querySelector("#currentDay").innerHTML = moment().format("l"); 
     for(var i = 1; i<6; i++){
@@ -59,9 +100,16 @@ let weather = {
     //}
 };
 
-document.querySelector(".card").addEventListener("submit", function(event) {
+
+
+document.querySelector("#form").addEventListener("submit", function(event) {
+    console.log(event.target[0].value)
     event.preventDefault();
     weather.search();
-
+    saveCity(event.target[0].value);
+    loadCity('clicked');
+    
 });
+
+
 

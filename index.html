@@ -15,21 +15,23 @@
         <header>
             <h1 class="text-center">Weather Dashboard</h1> 
         </header>
-        <div class="container display">
+        <div class="container disp">
             <div class="row">
-                <div class="col-lg-4">
-                    <form class="card">
+                <div class="col-lg-4 left">
+                    <form class="card" id="form">
                         <div class="search">
                             <h3>Search for A City:</h3>
-                            <input type="text" class="search-box" placeholder="Search for a city...">
-                            <button class="btn btn-primary" type="submit">Search</button>
+                            <input type="text" id="inputBox" class="search-box" placeholder="Search for a city...">
+                            <button class="btn btn-primary" id="submitbtn" type="submit">Search</button>
                         </div>
                     </form>
-                    <div>Search History</div>
+                    <section class="history">
+                        <ul id="list-cityOutput" class="list-group"></ul>
+                    </section>
                 </div>
-                <div class="col-lg-8">
-                    <div class="row display">
-                        <main class="text-start">
+                <div class="col-lg-8 disp">
+                    <div class="row disp borderstlye">
+                        <main class="text-start text-current">
                             <h3><span class="city"></span> (<span id="currentDay"></span>)<span> <img id="icon"></span> </h3> 
                             <di class="current">
                                 <p>Temp: <span class="temp"></span></p>
@@ -39,7 +41,7 @@
                             </di>
                         </main>
                     </div>
-                    <div class="row display">
+                    <div class=>
                         <section>
                             <h3 class="text-start">5-Day Forecast:</h3>
                             <div class="row five-day">
