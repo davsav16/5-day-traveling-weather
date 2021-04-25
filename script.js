@@ -72,7 +72,7 @@ let weather = {
         const { extraData } = data;
 
         document.querySelector(".city").innerHTML = name;
-        document.querySelector("#icon").setAttribute('src', `http://openweathermap.org/img/wn/${icon}.png`);
+        document.querySelector("#icon").setAttribute('src', `https://openweathermap.org/img/wn/${icon}.png`);
         document.querySelector(".temp").innerHTML = temp + " °F";
         document.querySelector(".wind").innerHTML = speed + " mph";
         document.querySelector(".humidity").innerHTML = humidity + "%";
@@ -85,14 +85,14 @@ let weather = {
             document.querySelector(`#day${i}temp`).innerHTML = data.list[i].main.temp + " °F";
             document.querySelector(`#day${i}wind`).innerHTML = data.list[i].wind.speed + " mph";
             document.querySelector(`#day${i}humid`).innerHTML = data.list[i].main.humidity + "%";
-            document.querySelector(`#day${i}img`).setAttribute('src', `http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}.png`)
+            document.querySelector(`#day${i}img`).setAttribute('src', `https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}.png`)
         }
     },
     search: function() {
         this.fetchWeather(document.querySelector(".search-box").value);
     },
     fiveDay: function(city) {
-        fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${this.apiKey}`)
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${this.apiKey}`)
         .then((response) => response.json())
         .then((data) => {
             this.display5Day(data);
