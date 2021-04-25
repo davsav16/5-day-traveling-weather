@@ -52,7 +52,7 @@ currentDate();
 let weather = {
     "apiKey": "9e8297a7de594ed3964b6416e7efecc3",
     fetchWeather: function (city) {
-        fetch ("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=9e8297a7de594ed3964b6416e7efecc3")
+        fetch ("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=9e8297a7de594ed3964b6416e7efecc3")
         .then((response) => response.json())
         .then((data) => {
             fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${data.coord.lat}&lon=${data.coord.lon}&exclude=hourly&appid=9e8297a7de594ed3964b6416e7efecc3`)
