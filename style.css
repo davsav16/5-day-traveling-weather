@@ -19,12 +19,13 @@
     margin-top: 20px;
 }
 .sBtnText {
-    
+    font-weight: bold;
+    font-size: 1rem;
 }
 .searchBtn {
     width: 100%;
     color: grey;
-    height: 3vw;
+    height: 40px;
     border-radius: 5px;
     margin-top: 10px;
 }
@@ -82,3 +83,8 @@
     margin-top: 15px;
     width: 100%;
 }
+
+@media (min-width: 1200px){
+.container {
+    max-width: 1200px;
+}}
